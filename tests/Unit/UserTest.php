@@ -6,15 +6,17 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class ExampleTest extends TestCase
+class UserTest extends TestCase
 {
     /**
      * A basic test example.
      *
      * @return void
      */
-    public function testBasicTest()
+    public function testUser()
     {
-        $this->assertFalse(false);
+//        dd($this->json('GET','/api/v1/posts/get')->getContent());
+        $this->assertTrue(false);
     }
+
 }

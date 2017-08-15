@@ -40,7 +40,7 @@ class UserController extends Controller
 
 
 
-        if(Auth::guard('admin')->attempt($cred,true))
+        if(Auth::guard('web')->attempt($cred,true))
         {
 //            return Auth::user();
             return redirect('/dashboard');
@@ -66,9 +66,9 @@ class UserController extends Controller
         $user->password = bcrypt($request->password);
         if($user->save())
         {
+            $cred = $request->only('email','password');
 
-
-            if(Auth::attempt($user))
+            if(Auth::attempt($cred))
             {
                 return Auth::user();
             }else{

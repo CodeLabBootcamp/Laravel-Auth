@@ -33,3 +33,9 @@ Route::group(['middleware'=>'guest','prefix'=>'/auth'],function (){
     Route::post('register','UserController@Register')->name('auth.register');
 
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/get_posts','PostController@getPosts');
